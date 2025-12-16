@@ -1,44 +1,38 @@
-### Short Summary
-A clear, one-sentence description of the bug.
+---
+name: Bug report
+about: Create a report to help us improve
+title: ''
+labels: ''
+assignees: ''
 
 ---
 
-### Mod & Game Version
-- **STATS+ version:**  
-- **Minecraft version:**  
-- **Fabric Loader version:**  
+**Describe the bug**
+A clear and concise description of what the bug is.
 
-### Environment
-- **Singleplayer / Multiplayer / Dedicated Server:**  
-- **Operating System:** (Windows / Linux / macOS)
+**To Reproduce**
+Steps to reproduce the behavior:
+1. Go to '...'
+2. Click on '....'
+3. Scroll down to '....'
+4. See error
 
----
+**Expected behavior**
+A clear and concise description of what you expected to happen.
 
-### Steps to Reproduce
-1.
-2.
-3.
-4.
+**Screenshots**
+If applicable, add screenshots to help explain your problem.
 
----
+**Desktop (please complete the following information):**
+ - OS: [e.g. iOS]
+ - Browser [e.g. chrome, safari]
+ - Version [e.g. 22]
 
-### Expected Behavior
-What you expected to happen.
+**Smartphone (please complete the following information):**
+ - Device: [e.g. iPhone6]
+ - OS: [e.g. iOS8.1]
+ - Browser [e.g. stock browser, safari]
+ - Version [e.g. 22]
 
----
-
-### Actual Behavior
-What actually happened instead.
-
----
-
-### Screenshots / Videos
-(Attach images or videos if applicable.)
-
----
-
-### Logs / Crash Reports
-Paste relevant Fabric logs here or link to a paste site.
-
-```text
-(paste logs here)
+**Additional context**
+Add any other context about the problem here.
