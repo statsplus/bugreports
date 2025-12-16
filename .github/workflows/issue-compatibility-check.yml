@@ -7,6 +7,7 @@ on:
 jobs:
   check-compatibility:
     runs-on: ubuntu-latest
+
     permissions:
       issues: write
 
@@ -24,9 +25,10 @@ jobs:
               "Using latest STATS+ version"
             ];
 
-            const missing = requiredChecks.filter(
-              check => !body.includes(`- [x] ${check}`)
-            );
+            const missing = requiredChecks.filter(check => {
+              const regex = new RegExp(`- \\[[xX]\\]\\s*${check}`, "i");
+              return !regex.test(body);
+            });
 
             if (missing.length > 0) {
               const message = `
@@ -36,7 +38,7 @@ The following required checks were not confirmed:
 
 ${missing.map(m => `- ${m}`).join("\n")}
 
-Please edit your issue and check all required boxes.
+Please edit your issue and check all required boxes before continuing.
 `;
 
               await github.rest.issues.createComment({
