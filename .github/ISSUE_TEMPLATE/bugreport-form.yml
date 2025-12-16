@@ -1,65 +1,122 @@
 name: Bug Report
-description: File a bug report.
+description: File a bug report for STATS+.
 title: "[Bug]: "
 labels: ["bug", "triage"]
-projects: ["octo-org/1", "octo-org/44"]
-assignees:
-  - octocat
 type: bug
+
 body:
   - type: markdown
     attributes:
       value: |
-        Thanks for taking the time to fill out this bug report!
+        Thanks for taking the time to report a bug!
+
+        ⚠️ **Important**
+        - STATS+ is **Fabric-only**
+        - STATS+ is **NOT intended to be used with other server-side mods**
+        - Client-side mods are allowed
+        - Issues from unsupported setups may be closed without investigation
+
+  - type: checkboxes
+    id: ci_check
+    attributes:
+      label: CI / Compatibility Check
+      description: Please confirm **all** of the following before submitting.
+      options:
+        - label: I am using **Fabric Loader**
+          required: true
+        - label: I am using a **supported Minecraft version**
+          required: true
+        - label: **No other server-side mods** are installed (STATS+ only)
+          required: true
+        - label: Any additional mods installed are **client-side only**
+          required: true
+        - label: I am using the **latest version of STATS+**
+          required: true
+        - label: I have checked existing issues to avoid duplicates
+          required: true
+
   - type: input
-    id: contact
+    id: statsplus_version
     attributes:
-      label: Contact Details
-      description: How can we get in touch with you if we need more info?
-      placeholder: ex. email@example.com
+      label: STATS+ Version
+      placeholder: ex. 1.2.0
     validations:
-      required: false
+      required: true
+
+  - type: input
+    id: minecraft_version
+    attributes:
+      label: Minecraft Version
+      placeholder: ex. 1.20.4
+    validations:
+      required: true
+
+  - type: input
+    id: fabric_version
+    attributes:
+      label: Fabric Loader Version
+      placeholder: ex. 0.15.7
+    validations:
+      required: true
+
+  - type: dropdown
+    id: environment
+    attributes:
+      label: Environment
+      options:
+        - Singleplayer
+        - Multiplayer (Integrated Server)
+        - Dedicated Server
+    validations:
+      required: true
+
   - type: textarea
-    id: what-happened
+    id: client_mods
     attributes:
-      label: What happened?
-      description: Also tell us, what did you expect to happen?
-      placeholder: Tell us what you see!
-      value: "A bug happened!"
+      label: Client-side Mods Installed
+      description: List **client-side mods only**. Leave blank if none.
+      placeholder: |
+        Example:
+        - Sodium
+        - Mod Menu
+
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to Reproduce
+      description: Provide clear steps so the issue can be reproduced.
+      placeholder: |
+        1.
+        2.
+        3.
     validations:
       required: true
-  - type: dropdown
-    id: version
+
+  - type: textarea
+    id: expected
     attributes:
-      label: Version
-      description: What version of our software are you running?
-      options:
-        - 1.0.2 (Default)
-        - 1.0.3 (Edge)
-      default: 0
+      label: Expected Behavior
+      placeholder: What you expected to happen.
     validations:
       required: true
-  - type: dropdown
-    id: browsers
+
+  - type: textarea
+    id: actual
     attributes:
-      label: What browsers are you seeing the problem on?
-      multiple: true
-      options:
-        - Firefox
-        - Chrome
-        - Safari
-        - Microsoft Edge
+      label: Actual Behavior
+      placeholder: What actually happened.
+    validations:
+      required: true
+
   - type: textarea
     id: logs
     attributes:
-      label: Relevant log output
-      description: Please copy and paste any relevant log output. This will be automatically formatted into code, so no need for backticks.
+      label: Logs / Crash Report
+      description: Paste relevant Fabric logs here or link to a paste service.
       render: shell
-  - type: checkboxes
-    id: terms
+
+  - type: textarea
+    id: additional
     attributes:
-      label: Code of Conduct
-      description: By submitting this issue, you agree to follow our [Code of Conduct](https://example.com).
-      options:
-        - label: I agree to follow this project's Code of Conduct
-          required: true
+      label: Additional Information
+      description: Anything else that might help diagnose the issue.
