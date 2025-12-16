@@ -3,7 +3,7 @@ name: Issue Compatibility Check
 on:
   issues:
     types: [opened, edited]
-
+    
 jobs:
   check-compatibility:
     runs-on: ubuntu-latest
