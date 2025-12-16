@@ -7,7 +7,6 @@ on:
 jobs:
   check-compatibility:
     runs-on: ubuntu-latest
-
     permissions:
       issues: write
 
@@ -32,14 +31,14 @@ jobs:
 
             if (missing.length > 0) {
               const message = `
-❌ **Compatibility Check Failed**
+            ❌ **Compatibility Check Failed**
 
-The following required checks were not confirmed:
+            The following required checks were not confirmed:
 
-${missing.map(m => `- ${m}`).join("\n")}
+            ${missing.map(m => `- ${m}`).join("\n")}
 
-Please edit your issue and check all required boxes before continuing.
-`;
+            Please edit your issue and check all required boxes before continuing.
+            `;
 
               await github.rest.issues.createComment({
                 owner: context.repo.owner,
