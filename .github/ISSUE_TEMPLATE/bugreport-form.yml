@@ -18,13 +18,9 @@ body:
       label: Compatibility Check
       options:
         - label: Using Fabric Loader
-          required: true
         - label: No other server-side mods installed
-          required: true
         - label: Client-side mods only (if any)
-          required: true
         - label: Using latest STATS+ version
-          required: true
 
   - type: input
     id: statsplus_version
